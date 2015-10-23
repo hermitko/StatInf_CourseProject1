@@ -10,8 +10,8 @@ output: pdf_document
 # Overview
 In this short document, we focus on showing the validity of Central limit theorem
 in case of drawing iid samples from exponential distribution with parameter 
-\(lambda = 0.2\). In particular, we show that a distribution of averages of \(n=40\) iid random variables drawn from this exponential distribution is approximately normal 
-\((N(\frac{1}{\lambda}, \frac{1}{n\lambda^2}))\).
+\(\lambda = 0.2\). In particular, we show that a distribution of averages of \(n=40\) iid random variables drawn from this exponential distribution is approximately normal 
+\(N(\frac{1}{\lambda}, \frac{1}{n\lambda^2})\).
 
 # Theory
 
@@ -112,16 +112,17 @@ A little more discussion takes place in dedicated section.
 
 # Discussion
 The mean of simulated averages is almost exactly the mean of discussed normal distribution
-\((N(5, 0.625))\), but this is no surprise. When computing the sample mean of averages of
+\(N(5, 0.625)\), but this is no surprise. When computing the sample mean of averages of
 iid variables  from a distribution with mean 5, we cannot get nothing else that the mean
-of this tistribution (and with
+of this distribution (and with
 the Law of large numbers in backpack we are pretty sure, that 40000 samples -- 40 for each
 of 1000 simulations -- is well enough).
 
 In case of variance, the story is a little more complicated. The CLT states only that
-the density should converge to the density of normal distribution as \(n\) tends to 
-infinity. But is \(n=40\) large enough? The personal opinion of the author (as he is 
-not very eperienced in statistics) is that for most practical purposes the approximation
+the density should converge to the density of the normal distribution as \(n\) tends to 
+infinity. But is \(n=40\) large enough for the variance?
+The personal opinion of the author (as he is 
+not very experienced in statistics) is that for most practical purposes the approximation
 is suitable.
 
 There remain some open questions, since mean and variance do not describe the density

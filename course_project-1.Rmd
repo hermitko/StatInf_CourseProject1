@@ -131,5 +131,5 @@ But the proper analysis of this is beyond the scope of this little document (and
 beyond the ability of the author, too).
 
 #Notice
-The knitr source code of this analysis is available at [shinyapps](https://hermitko.shinyapps.io/course_project-1).
+The knitr source code of this analysis is available at [github](https://github.com/hermitko/StatInf_CourseProject1).
 

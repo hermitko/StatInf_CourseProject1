@@ -54,7 +54,7 @@ the distribution of averages of \(n\) iid random variables from \(\mbox{Exp}(\la
 should be approximately \((N(\frac{1}{\lambda}, \frac{1}{n\lambda^2}))\).
 
 In particular, if we set \(\lambda = 0.2\) and \(n=40\), we expect that
-the resulted distribution of averages can be approximated by \((N(5, 0.625))\).
+the resulted distribution of averages can be approximated by \(N(5, 0.625)\).
 
 # Simulation in R
 We will simulate 1000 cases of taking average of 40 iid variables from \(\mbox{Exp}(0.2)\).
@@ -94,7 +94,7 @@ We see, that the mean is pretty close (\(|5-`r round(overall_mean,3)`|=
 `r abs(0.625-round(overall_var,3))`\)); both rounded to 3 decimal places.
 We will briefly discuss it later on.
 
-And let the last evidence the graphics -- the histogram of simulated averages
+And let the last evidence be the graphics -- the histogram of simulated averages
 together with the density of normal distribution (black line).
 
 ```{r}
@@ -115,20 +115,20 @@ The mean of simulated averages is almost exactly the mean of discussed normal di
 \(N(5, 0.625)\), but this is no surprise. When computing the sample mean of averages of
 iid variables  from a distribution with mean 5, we cannot get nothing else that the mean
 of this distribution (and with
-the Law of large numbers in backpack we are pretty sure, that 40000 samples -- 40 for each
+the Law of large numbers in backpack we are pretty sure, that 40,000 samples -- 40 for each
 of 1000 simulations -- is well enough).
 
-In case of variance, the story is a little more complicated. The CLT states only that
+Regarding variance, the story is a little more complicated. The CLT states only that
 the density should converge to the density of the normal distribution as \(n\) tends to 
 infinity. But is \(n=40\) large enough for the variance?
 The personal opinion of the author (as he is 
 not very experienced in statistics) is that for most practical purposes the approximation
 is suitable.
 
-There remain some open questions, since mean and variance do not describe the density
-in any case fully. As far as author can say -- from the plot is apparent, that the
-approximation with normal density is pretty accurate (in the sense of the density curve).
-But the proper analysis of this is beyond the scope of this little document (and
+There remain some open questions, since the mean and the variance do not describe the
+density in any case fully. As far as author can say -- from the included plot is apparent,
+that the approximation with normal density is pretty accurate (in the sense of the density
+curve). But the proper analysis of this is beyond the scope of this little document (and
 beyond the ability of the author, too).
 
 #Notice

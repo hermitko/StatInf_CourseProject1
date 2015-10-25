@@ -1,5 +1,5 @@
 ---
-title: "Simulation of exponential distribution"
+title: "Simulation of averages from exponential distribution"
 author: "Jan Herman"
 date: "October 25, 2015"
 header-includes:
@@ -67,10 +67,10 @@ n <- 40
 set.seed(2)
 ```
 
-Then we sample 40,000 values from \(\mbox{Exp}(0.2)\) and organize it into matrix
+Then we sample 40,000 values from \(\mbox{Exp}(0.2)\) and organize them into matrix
 with 1000 rows and 40 columns. Each row represents one simulation.
 
-We compute row means -- these are our averages, whose distribution we want to examine.
+We compute row means -- these are our averages whose distribution we want to examine.
 
 ```{r}
 samples <- matrix(rexp(sim_count * n, lambda), 
@@ -95,7 +95,8 @@ We see, that the mean is pretty close (\(|5-`r round(overall_mean,3)`|=
 We will briefly discuss it later on.
 
 And let the last evidence be the graphics -- the histogram of simulated averages
-together with the density of normal distribution (black line).
+together with the density of normal distribution with previously computed
+parameters (black line).
 
 ```{r}
 library(ggplot2)
@@ -113,24 +114,24 @@ A little more discussion takes place in dedicated section.
 # Discussion
 The mean of simulated averages is almost exactly the mean of discussed normal distribution
 \(N(5, 0.625)\), but this is no surprise. When computing the sample mean of averages of
-iid variables  from a distribution with mean 5, we cannot get nothing else that the mean
-of this distribution (and with
-the Law of large numbers in backpack we are pretty sure, that 40,000 samples -- 40 for each
-of 1000 simulations -- is well enough).
+iid variables from a distribution with mean 5, we cannot get nothing else that the mean
+of this distribution (and with the Law of large numbers in our backpack we are pretty 
+sure that 40,000 samples -- 40 for each of 1000 simulations -- is well enough).
 
 Regarding variance, the story is a little more complicated. The CLT states only that
-the density should converge to the density of the normal distribution as \(n\) tends to 
-infinity. But is \(n=40\) large enough for the variance?
+the distribution of averages should converge to the normal distribution as 
+\(n\) tends to infinity. But is \(n=40\) large enough for the variance?
 The personal opinion of the author (as he is 
 not very experienced in statistics) is that for most practical purposes the approximation
-is suitable.
+with discussed normal distribution is suitable.
 
 There remain some open questions, since the mean and the variance do not describe the
-density in any case fully. As far as author can say -- from the included plot is apparent,
-that the approximation with normal density is pretty accurate (in the sense of the density
-curve). But the proper analysis of this is beyond the scope of this little document (and
-beyond the ability of the author, too).
+distribution in any case fully. As far as author can say -- from the included plot is
+apparent that the approximation with normal distribution is pretty accurate 
+(in the sense of the density curve). But the proper analysis of this statement is beyond 
+the scope of this little document (and beyond the ability of the author, too).
 
 #Notice
-The knitr source code of this analysis is available at [github](https://github.com/hermitko/StatInf_CourseProject1).
+The knitr source code of this analysis is available at
+[github](https://github.com/hermitko/StatInf_CourseProject1).
 
